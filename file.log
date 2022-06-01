@@ -27,3 +27,70 @@
 2022-04-05 21:26:11,593 - __main__ - ERROR - division by zero
 2022-04-05 21:27:56,288 - __main__ - INFO - Find in symbols [летопись], word len = 4. mask = ^л\w{3}$
 2022-04-05 21:27:56,307 - __main__ - ERROR - division by zero
+2022-05-05 13:00:06,613 - __main__ - INFO - Find in symbols [hfdaabegytrlloosu], word len = 4. mask = \w{8}$
+2022-05-05 13:00:29,503 - __main__ - ERROR - 
+2022-05-05 13:00:30,083 - __main__ - INFO - Find in symbols [hfdaabegytrlloosu], word len = 8. mask = \w{8}$
+2022-05-05 13:00:38,773 - __main__ - ERROR - 
+2022-05-05 13:00:39,353 - __main__ - INFO - Find in symbols [hfdaabegytrlloosu], word len = 8. mask = \w{8}$
+2022-05-05 13:00:40,126 - __main__ - ERROR - 
+2022-05-05 13:00:42,963 - __main__ - INFO - Find in symbols [hfdaabegytrlloosu], word len = 8. mask = \w{8}$
+2022-05-05 13:01:39,898 - __main__ - ERROR - 
+2022-05-05 13:02:09,853 - __main__ - INFO - Find in symbols [bush], word len = 4. mask = \w{4}$
+2022-05-05 13:02:09,853 - __main__ - ERROR - division by zero
+2022-05-05 13:02:26,193 - __main__ - INFO - Find in symbols [bush], word len = 4. mask = \w{3}$
+2022-05-05 13:02:26,193 - __main__ - ERROR - division by zero
+2022-05-05 13:02:33,593 - __main__ - INFO - Find in symbols [bush], word len = 3. mask = \w{3}$
+2022-05-05 13:02:33,593 - __main__ - ERROR - division by zero
+2022-05-05 13:03:06,543 - __main__ - INFO - Find in symbols [hfdaabegytrlloosu], word len = 8. mask = ^\w{8}$
+2022-05-05 13:26:16,885 - __main__ - ERROR - division by zero
+2022-05-05 14:56:32,056 - __main__ - INFO - Find in symbols [hdabegtrlou], word len = 7. mask = ^\w{7}$
+2022-05-05 14:56:34,510 - __main__ - ERROR - division by zero
+2022-05-05 14:57:02,376 - __main__ - INFO - Find in symbols [dabegtrlou], word len = 7. mask = ^\w{7}$
+2022-05-05 14:57:03,311 - __main__ - ERROR - division by zero
+2022-05-05 14:57:11,481 - __main__ - INFO - Find in symbols [dabetrlou], word len = 7. mask = ^\w{7}$
+2022-05-05 14:57:11,771 - __main__ - ERROR - division by zero
+2022-05-05 14:57:27,721 - __main__ - INFO - Find in symbols [dabetlou], word len = 7. mask = ^\w{7}$
+2022-05-05 14:57:27,781 - __main__ - ERROR - division by zero
+2022-05-05 14:58:04,181 - __main__ - INFO - Find in symbols [dabetlou], word len = 6. mask = ^\w{7}$
+2022-05-05 14:58:47,193 - __main__ - INFO - Find in symbols [dabetlou], word len = 6. mask = ^\w{6}$
+2022-05-05 14:58:57,601 - __main__ - INFO - Find in symbols [abetlou], word len = 6. mask = ^\w{6}$
+2022-05-05 14:59:13,501 - __main__ - INFO - Find in symbols [abetou], word len = 5. mask = ^\w{5}$
+2022-05-05 15:01:35,562 - __main__ - INFO - Find in symbols [abetou], word len = 5. mask = ^a\w{3}$
+2022-05-05 15:02:24,730 - __main__ - INFO - Find in symbols [abetou], word len = 4. mask = ^a\w{3}$
+2022-05-05 15:02:52,057 - __main__ - INFO - Find in symbols [compact], word len = 4. mask = ^a\w{3}$
+2022-05-05 15:03:10,496 - __main__ - INFO - Find in symbols [compact], word len = 5. mask = ^a\w{3}$
+2022-05-05 15:03:17,587 - __main__ - INFO - Find in symbols [compacts], word len = 5. mask = ^a\w{3}$
+2022-05-05 15:03:24,411 - __main__ - INFO - Find in symbols [compactse], word len = 5. mask = ^a\w{3}$
+2022-05-05 15:03:34,541 - __main__ - INFO - Find in symbols [compactse], word len = 6. mask = ^a\w{3}$
+2022-05-05 15:04:11,361 - __main__ - INFO - Find in symbols [compactser], word len = 6. mask = ^a\w{3}$
+2022-05-05 15:04:18,031 - __main__ - INFO - Find in symbols [compactser], word len = 6. mask = ^a\w{4}$
+2022-05-05 15:04:37,901 - __main__ - INFO - Find in symbols [compactser], word len = 6. mask = ^a\w{4}$
+2022-05-05 15:06:15,242 - __main__ - INFO - Find in symbols [snakers], word len = 5. mask = ^a\w{4}$
+2022-05-05 15:06:34,732 - __main__ - INFO - Find in symbols [snakers], word len = 5. mask = ^a\w{4}$
+2022-05-11 10:54:58,419 - __main__ - INFO - Find in symbols [qwtuipdfhjklzxcbm], word len = 6. mask = ^\w{3}lic$
+2022-05-23 11:01:36,265 - __main__ - INFO - Find in symbols [qwtuipdfhjklz], word len = 6. mask = ^\w{3}lic$
+2022-05-23 11:02:03,172 - __main__ - INFO - Find in symbols [qwtuipdfhk], word len = 5. mask = ^\w{5}$
+2022-05-23 16:54:04,993 - __main__ - INFO - Find in symbols [qwtuipdfh], word len = 5. mask = ^\w{5}$
+2022-05-24 13:52:12,052 - __main__ - INFO - Find in symbols [qwruopfghjzxcvbnm], word len = 5. mask = ^a\w{3}y$
+2022-05-24 13:52:29,024 - __main__ - INFO - Find in symbols [aqwruopfghjzxcvbnmy], word len = 5. mask = ^a\w{3}y$
+2022-05-27 07:49:14,423 - __main__ - INFO - Find in symbols [etuqwidfgjlzxcvm], word len = 5. mask = ^\w{5}$
+2022-05-27 07:50:47,355 - __main__ - INFO - Find in symbols [etuqwifgjlzxvm], word len = 5. mask = ^\w{5}$
+2022-05-27 07:51:10,563 - __main__ - INFO - Find in symbols [etuqwifgjlzxvm], word len = 5. mask = ^\w{2}u\w{2}$
+2022-05-27 16:39:29,488 - __main__ - INFO - Find in symbols [abcdefghijklmnopqrstuvwxyz], word len = 5. mask = ^ka\w{2}b$
+2022-05-28 10:53:47,433 - __main__ - INFO - Find in symbols [abcdefghijklmnopqrstuvwxyz], word len = 5. mask = ^\w{2}t\we$
+2022-05-28 10:54:42,382 - __main__ - INFO - Find in symbols [bcefghjklnoqtuvwxyz], word len = 5. mask = ^\w{2}t\we$
+2022-05-28 10:55:53,286 - __main__ - INFO - Find in symbols [bcefgjklnoqtuvwxz], word len = 5. mask = ^\w{2}e\wt$
+2022-05-28 10:57:19,793 - __main__ - INFO - Find in symbols [cefgjkloqtuvwxz], word len = 5. mask = ^\w{1}le\wt$
+2022-05-28 10:58:21,436 - __main__ - INFO - Find in symbols [cegjkloqtuvwxz], word len = 5. mask = ^\w{1}le\wt$
+2022-05-28 10:58:49,099 - __main__ - INFO - Find in symbols [cegjkloqtuvwxz], word len = 5. mask = ^\wlect$
+2022-05-28 10:59:15,917 - __main__ - INFO - Find in symbols [qwcegjkloqtuvwxz], word len = 5. mask = ^\wlect$
+2022-05-29 09:34:57,036 - __main__ - INFO - Find in symbols [qwcegaotuv], word len = 6. mask = ^\w{6}
+2022-05-29 09:36:15,733 - __main__ - INFO - Find in symbols [qwcaotvrikl], word len = 6. mask = ^\w{2}t{3}
+2022-05-29 09:36:27,838 - __main__ - INFO - Find in symbols [qwcaotvrikl], word len = 6. mask = ^\w{2}t\w{3}
+2022-05-29 09:36:53,338 - __main__ - INFO - Find in symbols [qwcaotvriklymn], word len = 6. mask = ^\w{2}t\w{3}
+2022-06-01 09:12:30,753 - __main__ - INFO - Find in symbols [acdfghijklmnopqrstuwxy], word len = 5. mask = ^\w{1}ra\w{2}
+2022-06-01 09:13:19,903 - __main__ - INFO - Find in symbols [acdghijklmnopqrsuwxy], word len = 5. mask = ^cra\w{2}
+2022-06-01 09:14:02,146 - __main__ - INFO - Find in symbols [acdghijklmnopqrsuwxy], word len = 5. mask = ^cra\w{2}
+2022-06-01 09:14:42,015 - __main__ - INFO - Find in symbols [acdghijklmnopqrsuwxy], word len = 5. mask = ^cra\w{2}
+2022-06-01 09:15:29,001 - __main__ - INFO - Find in symbols [acdghijlmopqrsuwxy], word len = 5. mask = ^cra\w{2}
+2022-06-01 09:18:10,319 - __main__ - INFO - Find in symbols [acdghijlmopqrsuwxyz], word len = 5. mask = ^cra\w{2}

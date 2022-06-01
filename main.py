@@ -114,9 +114,15 @@ if __name__ == '__main__':
     # comb = permutations('ABCD', 4)
     # comb = permutations('pleapeinp', 9)
     #########################################
-    input_chars = 'летопись'
-    letters_amount = 4
-    mask = "^л\w{3}$"
+    # input_chars = 'летопись'
+    # input_chars = 'bush'
+    # input_chars = 'abcdefgijkmnopqrtuvxyz'
+    # input_chars = 'etuqwifgjlzxvm'
+    input_chars = 'acdghijlmopqrsuwxyz'
+    letters_amount = 5
+    # mask = "^л\w{3}$"
+    # mask = "^\w{" + str(letters_amount) + "}$"
+    mask = "^cra\w{2}"
     #########################################
 
     finder = WordFinder.WordFinder(input_chars, letters_amount)
@@ -128,13 +134,13 @@ if __name__ == '__main__':
         print(res)
         print(f"Found count: {len(res)}")
         print("STEP 2")
-        finder.WordLength = 8
-        res = finder.find_all_words()
+        # finder.WordLength = letters_amount
+        # res = finder.find_all_words()
         print(res)
         print(f"Found count: {len(res)}")
         a1 = 5
         a2 = 0
-        a3 = a1/a2
+        # a3 = a1/a2
     except ValueError as err:
         logger.error(err)
         print("Could not convert data.")
