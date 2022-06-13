@@ -94,3 +94,25 @@
 2022-06-01 09:14:42,015 - __main__ - INFO - Find in symbols [acdghijklmnopqrsuwxy], word len = 5. mask = ^cra\w{2}
 2022-06-01 09:15:29,001 - __main__ - INFO - Find in symbols [acdghijlmopqrsuwxy], word len = 5. mask = ^cra\w{2}
 2022-06-01 09:18:10,319 - __main__ - INFO - Find in symbols [acdghijlmopqrsuwxyz], word len = 5. mask = ^cra\w{2}
+2022-06-02 21:03:54,154 - __main__ - INFO - Find in symbols [qwertuiopsdghjlzxcvn], word len = 6. mask = ^\w{2}r\w{3}$
+2022-06-02 21:06:22,000 - __main__ - INFO - Find in symbols [qweropsdghjlzxcvn], word len = 6. mask = ^\w{2}r\w{3}$
+2022-06-04 10:34:39,935 - __main__ - INFO - Find in symbols [qwetyuopfghjklzxcvnm], word len = 5. mask = ^\w{3}ne$
+2022-06-04 13:58:41,414 - __main__ - INFO - Find in symbols [qwetyuopfghjklzxcvnm], word len = 5. mask = ^\w{3}ne$
+2022-06-04 13:59:46,410 - __main__ - INFO - Find in symbols [qwetyuopfghjklzxcvnm], word len = 5. mask = ^\w{3}ne$
+2022-06-06 17:43:27,000 - __main__ - INFO - Find in symbols [llgdaeiytrnpsu], word len = 8. mask = ^\w{8}$
+2022-06-06 17:47:55,594 - __main__ - INFO - Find in symbols [llgaeiyrnps], word len = 8. mask = ^\w{8}$
+2022-06-06 17:52:01,748 - __main__ - INFO - Find in symbols [ppael], word len = 5. mask = ^\w{5}$
+2022-06-06 17:52:26,197 - __main__ - INFO - Find in symbols [pael], word len = 5. mask = ^\w{5}$
+2022-06-06 17:52:32,402 - __main__ - INFO - Find in symbols [ppael], word len = 5. mask = ^\w{5}$
+2022-06-06 17:59:12,348 - __main__ - INFO - Find in symbols [llebcixsport], word len = 7. mask = ^\w{7}$
+2022-06-06 18:05:07,753 - __main__ - INFO - Find in symbols [liehkusnrt], word len = 5. mask = ^\w{5}$
+2022-06-06 18:07:06,132 - __main__ - INFO - Find in symbols [unkelrr], word len = 5. mask = ^\w{5}$
+2022-06-06 18:08:53,772 - __main__ - INFO - Find in symbols [rrngeefio], word len = 9. mask = ^\w{9}$
+2022-06-06 18:15:44,983 - __main__ - INFO - Find in symbols [ooomdaalnytrpsu], word len = 8. mask = ^\w{8}$
+2022-06-06 18:54:58,491 - __main__ - INFO - Find in symbols [wooleehms], word len = 9. mask = ^\w{9}$
+2022-06-12 12:26:28,034 - __main__ - INFO - Find in symbols [wooleehms], word len = 9. mask = ^\w{9}$
+2022-06-13 19:53:10,091 - __main__ - INFO - Find in symbols [wooleehms], word len = 9. mask = ^\w{9}$
+2022-06-13 19:55:07,730 - __main__ - INFO - Find in symbols [acdefhiklrstnop], word len = 9. mask = ^d[a-z]{1}ari[a-z]{2}$
+2022-06-13 19:55:48,300 - __main__ - ERROR - 
+2022-06-13 19:56:13,404 - __main__ - INFO - Find in symbols [acdefhiklrstnp], word len = 7. mask = ^d[a-z]{1}ari[a-z]{2}$
+2022-06-13 19:57:15,193 - __main__ - INFO - Find in symbols [acdefhiklrstni], word len = 7. mask = ^d[a-z]{1}ari[a-z]{2}$
