@@ -1,3 +1,4 @@
+import datetime
 import random
 import re
 import time
@@ -6,6 +7,9 @@ import logging
 import logging.config
 from itertools import product, permutations, combinations, combinations_with_replacement, islice, zip_longest
 import WordFinder
+import WordFinderAsyncio
+import WordFinderMP
+import WordFinderMTH
 from multiprocessing import Process, Queue, Pool, current_process, freeze_support
 from threading import Thread
 from concurrent.futures import ThreadPoolExecutor
@@ -13,10 +17,14 @@ from functools import partial
 # from time import time
 import numpy as np
 # from queue import Queue
+import asyncio
 
 
 # logging.basicConfig(level=logging.DEBUG)
 # logging.basicConfig(format='%(process)d-%(levelname)s-%(message)s')
+import WordFinderMTH_2
+import WordFinderMTH_TEST
+
 logging.config.fileConfig(fname='log.conf', disable_existing_loggers=False)
 logger = logging.getLogger(__name__)
 # logger = logging.getLogger('fHandler')
@@ -160,7 +168,8 @@ def find_all_words_mask_rpt_mf(words: [], products: [], mask: str) -> list[str]:
 
 def experiment2():
     ts = time.time()
-    finder = WordFinder.WordFinder2("acdefhiklrstnop", 7, "^d[a-z]{1}ari[a-z]{2}$")
+    finder = WordFinderMP.WordFinderMP("yupshjlzxcvn", 5, "^s\w{2}n[a-z]{1}$")
+    # finder = WordFinder.WordFinder2("acdefhiklrstnop", 7, "^d[a-z]{1}ari[a-z]{2}$")
     # finder = WordFinder.WordFinder2("acdefhiklrstnop", 6, "[a-z]{2}pp[a-z]{2}")
     # finder = WordFinder.WordFinder2("acdefhiklrstnop", 5, "^app[a-z]{2}")
     print('Took %s' % (time.time() - ts))
@@ -168,7 +177,9 @@ def experiment2():
     res = finder.find()
     print(">>> RESULT >>>")
     print(res)
-    print('Took %s' % (time.time() - ts))
+    ts2 = time.time() - ts
+    print('>>> ' + str(datetime.timedelta(0, ts2)))
+    # print(time.strftime('Took %M:%S', time.gmtime(ts2)))
 
 
 def experiment():
@@ -257,7 +268,7 @@ def experiment():
     # pineaPPle
     # finder2 = WordFinder.WordFinder2("acdefhiklnop", 9, "[a-z]{5}pp[a-z]{2}")
     # diarist
-    finder2 = WordFinder.WordFinder2("acdefhiklrstnop", 7, "[a-z]{2}ari[a-z]{2}")
+    finder2 = WordFinderMP.WordFinderMP("acdefhiklrstnop", 7, "[a-z]{2}ari[a-z]{2}")
     print('Took %s', time.time() - ts)
     answer = []
     res = []
@@ -337,15 +348,16 @@ def main():
     #########################################
     # input_chars = 'летопись'
     # input_chars = 'bush'
-    # input_chars = 'abcdefgijkmnopqrtuvxyz'
-    # input_chars = 'etuqwifgjlzxvm'
+    # input_chars = 'abcdefghijklmnopqrstuvwxyz'
+    # input_chars = 'qwertyuiopasdfghjklzxcvbnm'
     # finder = WordFinder.WordFinder2("acdefhiklrstnop", 7, "^d[a-z]{1}ari[a-z]{2}$")
-    input_chars = 'acdefhiklrstni'
-    letters_amount = 7
+    input_chars = 'qyupsfghjlzxcvnm'
+    letters_amount = 5
     # mask = "^л\w{3}$"
     # mask = "^\w{" + str(letters_amount) + "}$"
     # mask = "^\w{9}$"
-    mask = "^d[a-z]{1}ari[a-z]{2}$"
+    # mask = "^d[a-z]{1}ari[a-z]{2}$"
+    mask = "^s\w{2}n[a-z]{1}$"
     #########################################
 
     finder = WordFinder.WordFinder(input_chars, letters_amount)
@@ -395,8 +407,52 @@ def main():
     print(f"Elapsed time: {round(end - start, 4)} sec")
 
 
+def experiment3():
+    ts = time.time()
+    # finder = WordFinderMTH.WordFinderMTH("yupsholzxcvnae", 5, "^[a-z]{1}pp[a-z]{2}$")
+    finder = WordFinderMTH.WordFinderMTH("ayupsholzxcve", 5, '^\\w{2}p\\w{2}$')
+    ts = time.time()
+    res = finder.find()
+    print(">>> RESULT")
+    print(res)
+    ts2 = time.time() - ts
+    print('>>> ' + str(datetime.timedelta(0, ts2)))
+
+
+def experiment4():
+    ts = time.time()
+    res = WordFinderMTH_2.find(r"ayupsholzxcvest", 5, r"ap\w{3}")
+    print(">>> RESULT")
+    print(res)
+    ts2 = time.time() - ts
+    print('>>> ' + str(datetime.timedelta(0, ts2)))
+
+
+def experiment5():
+    # finder = WordFinderMTH_TEST.WordFinder(r"teachertagepuo", 6, r"^tea\w{3}")
+    finder = WordFinderMTH_TEST.WordFinder(r"teachertagepuosx", 7, r"^tea\w{4}")
+    ts = time.time()
+    res = finder.find_ver_2()
+    # res = finder.find()
+    print(">>> RESULT")
+    print(res)
+    ts2 = time.time() - ts
+    print('>>> ' + str(datetime.timedelta(0, ts2)))
+
+
+def experiment6():
+    # finder = WordFinderAsyncio.WordFinderAA()
+    # asyncio.run(finder.find_ver_3())
+    WordFinderAsyncio.run()
+
+
 if __name__ == '__main__':
-    main()
+    # main()
     # freeze_support()
     # experiment()
     # experiment2()
+    # experiment3()
+    # experiment4()
+    experiment5()
+    # experiment6()
+
