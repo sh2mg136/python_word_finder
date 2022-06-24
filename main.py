@@ -35,7 +35,9 @@ f_format = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message
 f_handler.setFormatter(f_format)
 logger.addHandler(f_handler)
 
-WORDS_PATH_ENG = 'F:\\projects\\english-words\\words_alpha.txt'
+# WORDS_PATH_ENG = 'F:\\projects\\english-words\\words_alpha.txt'
+# WORDS_PATH_ENG = 'F:\\projects\\english-words-3\\MIT_word_list_10000.txt'
+WORDS_PATH_ENG = 'F:\\projects\\english-words-3\\english3.txt'
 WORDS_PATH_RUS = 'F:\\projects\\russian-words\\russian.txt'
 MODES = ["ENG", "RUS"]
 MODE = "ENG"
@@ -350,29 +352,39 @@ def main():
     # input_chars = 'bush'
     # input_chars = 'abcdefghijklmnopqrstuvwxyz'
     # input_chars = 'qwertyuiopasdfghjklzxcvbnm'
-    # finder = WordFinder.WordFinder2("acdefhiklrstnop", 7, "^d[a-z]{1}ari[a-z]{2}$")
-    input_chars = 'qyupsfghjlzxcvnm'
-    letters_amount = 5
-    # mask = "^л\w{3}$"
+    input_chars = 'abcdefghijklmnop'
+    mask = "pa*ca*e"
     # mask = "^\w{" + str(letters_amount) + "}$"
     # mask = "^\w{9}$"
     # mask = "^d[a-z]{1}ari[a-z]{2}$"
-    mask = "^s\w{2}n[a-z]{1}$"
+    # lasting
     #########################################
 
-    finder = WordFinder.WordFinder(input_chars, letters_amount)
+    # finder = WordFinder.WordFinder2("acdefhiklrstnop", 7, "^d[a-z]{1}ari[a-z]{2}$")
+    res = []
+
     try:
-        logger.info(f"Find in symbols [{input_chars}], word len = {letters_amount}. mask = {mask}")
+        finder = WordFinder.WordFinder(input_chars, mask)
+        logger.info(f"Find in symbols [{finder.Letters}], word len = {finder.WordLength}. mask = {finder.WordMask}")
         print(f"Mode: {finder.MODE}")
-        print("STEP 1")
-        res = finder.find_all_words_mask(mask)
+
+        print("STEP 1 (по маске без повторений)")
+        # res = finder.find_all_words_mask()
         print(res)
-        print(f"Found count: {len(res)}")
-        print("STEP 2")
-        finder.WordLength = letters_amount
-        res = finder.find_all_words()
+        print(f"Found: {len(res)}")
+
+        print("STEP 2 (все комбинации без повторений)")
+        # res = finder.find_all_words()
+        print(f"Found: {len(res)}")
         print(res)
-        print(f"Found count: {len(res)}")
+
+        # по маске с повторениями
+        print("STEP 3 (по маске с повторениями)")
+        finder2 = WordFinderMP.WordFinderMP(input_chars, mask)
+        res = finder2.find()
+        print(f"Found: {len(res)}")
+        print(res)
+
         a1 = 5
         a2 = 0
         # a3 = a1/a2
@@ -447,12 +459,12 @@ def experiment6():
 
 
 if __name__ == '__main__':
-    # main()
+    main()
     # freeze_support()
     # experiment()
     # experiment2()
     # experiment3()
     # experiment4()
-    experiment5()
+    # experiment5()
     # experiment6()
 
