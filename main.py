@@ -26,6 +26,7 @@ import WordFinderMP
 logging.config.fileConfig(fname='log.conf', disable_existing_loggers=False)
 logger = logging.getLogger(__name__)
 # logger = logging.getLogger('fHandler')
+# test
 
 f_handler = logging.FileHandler('file.log')
 f_handler.setLevel(logging.INFO)
@@ -375,7 +376,7 @@ def main():
 
         # по маске с повторениями
         print("STEP 3 (по маске с повторениями)")
-        finder2 = WordFinderMP.WordFinderMultiProc(input_chars, mask, 3000)
+        finder2 = WordFinderMP.WordFinderMultiProc(input_chars, mask, 10000)
         res = finder2.find()
         print(f"Found: {len(res)}")
         print(res)
