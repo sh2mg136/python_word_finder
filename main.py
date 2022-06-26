@@ -8,7 +8,6 @@ import logging.config
 from itertools import product, permutations, combinations, combinations_with_replacement, islice, zip_longest
 import WordFinder
 import WordFinderAsyncio
-import WordFinderMP
 import WordFinderMTH
 from multiprocessing import Process, Queue, Pool, current_process, freeze_support
 from threading import Thread
@@ -18,12 +17,11 @@ from functools import partial
 import numpy as np
 # from queue import Queue
 import asyncio
-
-
 # logging.basicConfig(level=logging.DEBUG)
 # logging.basicConfig(format='%(process)d-%(levelname)s-%(message)s')
 import WordFinderMTH_2
 import WordFinderMTH_TEST
+import WordFinderMP
 
 logging.config.fileConfig(fname='log.conf', disable_existing_loggers=False)
 logger = logging.getLogger(__name__)
@@ -170,10 +168,7 @@ def find_all_words_mask_rpt_mf(words: [], products: [], mask: str) -> list[str]:
 
 def experiment2():
     ts = time.time()
-    finder = WordFinderMP.WordFinderMP("yupshjlzxcvn", 5, "^s\w{2}n[a-z]{1}$")
-    # finder = WordFinder.WordFinder2("acdefhiklrstnop", 7, "^d[a-z]{1}ari[a-z]{2}$")
-    # finder = WordFinder.WordFinder2("acdefhiklrstnop", 6, "[a-z]{2}pp[a-z]{2}")
-    # finder = WordFinder.WordFinder2("acdefhiklrstnop", 5, "^app[a-z]{2}")
+    finder = WordFinderMP.WordFinderMultiProc("yupshjlzxcvn", "**n**")
     print('Took %s' % (time.time() - ts))
     ts = time.time()
     res = finder.find()
@@ -270,7 +265,7 @@ def experiment():
     # pineaPPle
     # finder2 = WordFinder.WordFinder2("acdefhiklnop", 9, "[a-z]{5}pp[a-z]{2}")
     # diarist
-    finder2 = WordFinderMP.WordFinderMP("acdefhiklrstnop", 7, "[a-z]{2}ari[a-z]{2}")
+    finder2 = WordFinderMP.WordFinderMultiProc("acdefhiklrstnop", "**ari**")
     print('Took %s', time.time() - ts)
     answer = []
     res = []
@@ -352,8 +347,8 @@ def main():
     # input_chars = 'bush'
     # input_chars = 'abcdefghijklmnopqrstuvwxyz'
     # input_chars = 'qwertyuiopasdfghjklzxcvbnm'
-    input_chars = 'abcdefghijklmnop'
-    mask = "pa*ca*e"
+    input_chars = 'adefghijlmnopqrstuvwxy'
+    mask = "re*a*"
     # mask = "^\w{" + str(letters_amount) + "}$"
     # mask = "^\w{9}$"
     # mask = "^d[a-z]{1}ari[a-z]{2}$"
@@ -369,7 +364,7 @@ def main():
         print(f"Mode: {finder.MODE}")
 
         print("STEP 1 (по маске без повторений)")
-        # res = finder.find_all_words_mask()
+        res = finder.find_all_words_mask()
         print(res)
         print(f"Found: {len(res)}")
 
@@ -380,7 +375,7 @@ def main():
 
         # по маске с повторениями
         print("STEP 3 (по маске с повторениями)")
-        finder2 = WordFinderMP.WordFinderMP(input_chars, mask)
+        finder2 = WordFinderMP.WordFinderMultiProc(input_chars, mask, 3000)
         res = finder2.find()
         print(f"Found: {len(res)}")
         print(res)

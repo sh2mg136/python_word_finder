@@ -247,3 +247,27 @@
 2022-06-24 14:35:07,288 - __main__ - INFO - Find in symbols [abcdefghijklmnop], word len = 5. mask = ^a[abcdefghijklmnop]{2}le$
 2022-06-24 14:36:23,867 - __main__ - INFO - Find in symbols [abcdefghijklmnop], word len = 7. mask = ^pa[abcdefghijklmnop]{1}ca[abcdefghijklmnop]{1}e$
 2022-06-24 14:43:39,995 - __main__ - ERROR - 
+2022-06-25 14:56:07,452 - __main__ - INFO - Find in symbols [abdfghijklmnoqrstuvwxyz], word len = 5. mask = ^[abdfghijklmnoqrstuvwxyz]{2}a[abdfghijklmnoqrstuvwxyz]{2}$
+2022-06-25 14:58:27,809 - __main__ - ERROR - 
+2022-06-25 14:58:35,811 - __main__ - INFO - Find in symbols [abdfghijklmnoqrstuvwxyz], word len = 5. mask = ^[abdfghijklmnoqrstuvwxyz]{2}as[abdfghijklmnoqrstuvwxyz]{1}$
+2022-06-25 14:59:17,811 - __main__ - ERROR - 
+2022-06-25 14:59:50,302 - __main__ - INFO - Find in symbols [abdfghijklmnoqrstuvwxyz], word len = 5. mask = ^[abdfghijklmnoqrstuvwxyz]{2}ass$
+2022-06-26 11:06:50,917 - __main__ - INFO - Find in symbols [acdefghijlmnopqrstuvwxyz], word len = 5. mask = ^[acdefghijlmnopqrstuvwxyz]{3}a[acdefghijlmnopqrstuvwxyz]{1}$
+2022-06-26 11:07:40,981 - __main__ - INFO - Find in symbols [adefghijlmnopqrstuvwxy], word len = 5. mask = ^[adefghijlmnopqrstuvwxy]{1}e[adefghijlmnopqrstuvwxy]{1}a[adefghijlmnopqrstuvwxy]{1}$
+2022-06-26 11:08:09,023 - __main__ - INFO - Find in symbols [adefghijlmnopqrstuvwxy], word len = 5. mask = ^re[adefghijlmnopqrstuvwxy]{1}a[adefghijlmnopqrstuvwxy]{1}$
+2022-06-26 11:42:46,468 - __main__ - INFO - Find in symbols [adefghijlmnopqrstuvwxy], word len = 5. mask = ^re[adefghijlmnopqrstuvwxy]{1}a[adefghijlmnopqrstuvwxy]{1}$
+2022-06-26 11:42:49,341 - __main__ - ERROR - name 'WordFinderMP' is not defined
+2022-06-26 11:52:31,982 - __main__ - INFO - Find in symbols [adefghijlmnopqrstuvwxy], word len = 5. mask = ^re[adefghijlmnopqrstuvwxy]{1}a[adefghijlmnopqrstuvwxy]{1}$
+2022-06-26 11:52:34,837 - __main__ - ERROR - name 'WordFinderMP' is not defined
+2022-06-26 11:59:23,218 - __main__ - INFO - Find in symbols [adefghijlmnopqrstuvwxy], word len = 5. mask = ^re[adefghijlmnopqrstuvwxy]{1}a[adefghijlmnopqrstuvwxy]{1}$
+2022-06-26 12:00:19,273 - __main__ - INFO - Find in symbols [adefghijlmnopqrstuvwxy], word len = 5. mask = ^re[adefghijlmnopqrstuvwxy]{1}a[adefghijlmnopqrstuvwxy]{1}$
+2022-06-26 12:00:58,962 - __main__ - INFO - Find in symbols [adefghijlmnopqrstuvwxy], word len = 5. mask = ^re[adefghijlmnopqrstuvwxy]{1}a[adefghijlmnopqrstuvwxy]{1}$
+2022-06-26 12:05:04,542 - __main__ - INFO - Find in symbols [adefghijlmnopqrstuvwxy], word len = 5. mask = ^re[adefghijlmnopqrstuvwxy]{1}a[adefghijlmnopqrstuvwxy]{1}$
+2022-06-26 12:05:07,551 - __main__ - ERROR - 
+2022-06-26 12:06:13,356 - __main__ - INFO - Find in symbols [adefghijlmnopqrstuvwxy], word len = 5. mask = ^re[adefghijlmnopqrstuvwxy]{1}a[adefghijlmnopqrstuvwxy]{1}$
+2022-06-26 12:06:16,284 - __main__ - ERROR - 
+2022-06-26 12:07:27,822 - __main__ - INFO - Find in symbols [adefghijlmnopqrstuvwxy], word len = 5. mask = ^re[adefghijlmnopqrstuvwxy]{1}a[adefghijlmnopqrstuvwxy]{1}$
+2022-06-26 12:07:30,768 - __main__ - ERROR - 
+2022-06-26 12:11:29,848 - __main__ - INFO - Find in symbols [adefghijlmnopqrstuvwxy], word len = 5. mask = ^re[adefghijlmnopqrstuvwxy]{1}a[adefghijlmnopqrstuvwxy]{1}$
+2022-06-26 12:13:43,427 - __main__ - INFO - Find in symbols [adefghijlmnopqrstuvwxy], word len = 5. mask = ^re[adefghijlmnopqrstuvwxy]{1}a[adefghijlmnopqrstuvwxy]{1}$
+2022-06-26 12:14:30,392 - __main__ - INFO - Find in symbols [adefghijlmnopqrstuvwxy], word len = 5. mask = ^re[adefghijlmnopqrstuvwxy]{1}a[adefghijlmnopqrstuvwxy]{1}$

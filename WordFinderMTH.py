@@ -8,6 +8,7 @@ from threading import Thread, current_thread
 from multiprocessing.pool import ThreadPool
 import concurrent.futures
 import urllib.request
+import WordFinderBase
 
 
 URLS = ['http://www.foxnews.com/',
@@ -21,16 +22,6 @@ URLS = ['http://www.foxnews.com/',
 def load_url(url, timeout):
     with urllib.request.urlopen(url, timeout=timeout) as conn:
         return conn.read()
-
-
-#
-def is_english(s) -> bool:
-    try:
-        s.encode(encoding='utf-8').decode('ascii')
-    except UnicodeDecodeError:
-        return False
-    else:
-        return True
 
 
 class TaskWorker(Thread):
@@ -58,93 +49,11 @@ class TaskWorker(Thread):
 
 #
 # MultiThreading ver
-class WordFinderMTH(object):
-    WORDS_PATH_ENG = 'F:\\projects\\english-words\\words_alpha.txt'
-    WORDS_PATH_RUS = 'F:\\projects\\russian-words\\russian.txt'
-    MODE = "NONE"  # NONE | ENG | RUS
-    WordMask = ""
-    Permutations = []
-    Combinations = []
-    Products = []
-    WordChunks = [set() for _ in range(30)]
-    TOTAL_PAGES = 0
-
+class WordFinderMTH(WordFinderBase.WordFinderBase):
     #
-    #
-    @staticmethod
-    def group_elements(lst, chunk_size):
-        lst = iter(lst)
-        return iter(lambda: tuple(islice(lst, chunk_size)), ())
+    def __init__(self, letters: str, mask: str):
+        WordFinderBase.WordFinderBase.__init__(self, letters, mask)
 
-    #
-    #
-    def __init__(self, letters: str, word_len: int, mask: str):
-        self.Letters = letters
-        self.WordLength = word_len
-        self.WordMask = mask
-        self.MODE = "RUS"
-        if is_english(self.Letters) is True:
-            self.MODE = "ENG"
-        words_path = ""
-        if self.MODE == "ENG":
-            words_path = self.WORDS_PATH_ENG
-        elif self.MODE == "RUS":
-            words_path = self.WORDS_PATH_RUS
-        with open(words_path) as word_file:
-            self.Words = set(word_file.read().split())
-        self.Permutations = permutations(self.Letters, self.WordLength)
-        self.Combinations = combinations_with_replacement(self.Letters, self.WordLength)
-        self.Products = product(self.Letters, repeat=self.WordLength)
-
-        PAGE_SIZE = 10000
-        self.TOTAL_PAGES = int(len(self.Words) / PAGE_SIZE) + 1
-        assert self.TOTAL_PAGES > 0
-        self.WordChunks = [set() for _ in range(self.TOTAL_PAGES)]
-        print('Page amount:', self.TOTAL_PAGES)
-        page = 0
-        all_wrds_list = list(self.Words)
-        output = []
-        for out in self.group_elements(all_wrds_list, PAGE_SIZE):
-            output.append(out)
-        # print(len(output))
-        for sp in output:
-            self.WordChunks[page] = set(sp)
-            page += 1
-
-        assert len(self.WordChunks) == self.TOTAL_PAGES
-
-        s = 0
-        for lst in self.WordChunks:
-            s += len(lst)
-        print(s)
-        assert s > 350000
-
-        some_word = 'supper'
-        b = False
-        page = -1
-        for lst in self.WordChunks:
-            if b is True:
-                break
-            page += 1
-            # print('Page %s = %s' % (page, len(lst)))
-            for wr in lst:
-                if wr == some_word:
-                    b = True
-                    break
-        print('Is word [%s] found -> %s (page %s)' % (some_word, b, page))
-        assert b is True
-        print(self.Letters)
-        print(self.WordMask)
-        b = False
-        for wr in self.WordChunks[page]:
-            if wr == some_word:
-                b = True
-                break
-        assert b is True
-        print('Yeah, it`s true! Word [%s] found on page %s' % (some_word, page))
-        print()
-
-    #
     #
     def _find_all_words_mask_rpt_mf(self, num: int, words: []) -> tuple[int, list[str]]:
         f_result = []
